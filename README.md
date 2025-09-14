@@ -138,6 +138,365 @@ Modul high-level tidak boleh bergantung pada modul low-level. Keduanya harus ber
 
 ---
 
+## ⭐ Karakteristik Kode Berkualitas (Code Quality Attributes)
+
+### 1. **Readable (Dapat Dibaca)**
+**Kode harus mudah dibaca seperti membaca cerita**
+
+Kode ditulis sekali tapi dibaca berkali-kali. Developer lain (termasuk Anda di masa depan) harus bisa memahami kode dengan cepat.
+
+**Ciri-ciri kode yang Readable:**
+- Nama variabel dan fungsi yang deskriptif
+- Struktur yang konsisten
+- Indentasi yang benar
+- Komentar yang menjelaskan "why" bukan "what"
+
+**Contoh Buruk:**
+```python
+def p(x,y):
+    return x*y*0.1
+```
+
+**Contoh Baik:**
+```python
+def calculate_discount_price(original_price, discount_percentage):
+    """Calculate the final price after applying discount."""
+    discount_amount = original_price * discount_percentage * 0.01
+    return original_price - discount_amount
+```
+
+### 2. **Maintainable (Dapat Dipelihara)**
+**Kode harus mudah diubah dan diperbaiki**
+
+Maintainability adalah seberapa mudah kode dapat dimodifikasi untuk memperbaiki bug, menambah fitur, atau meningkatkan performa.
+
+**Karakteristik:**
+- Well-documented
+- Mengikuti coding standards
+- Memiliki test coverage yang baik
+- Tidak ada duplikasi kode
+- Dependencies yang jelas
+
+**Tips untuk Maintainable Code:**
+```javascript
+// Gunakan constants untuk magic numbers
+const MAX_RETRY_ATTEMPTS = 3; // Mudah diubah
+const CONNECTION_TIMEOUT = 5000; // dalam milliseconds
+
+// Daripada
+if (retries > 3) { // Magic number, susah di-maintain
+    // ...
+}
+```
+
+### 3. **Modular (Termodulasi)**
+**Kode dipecah menjadi modul-modul independent**
+
+Modularitas memungkinkan kode dibagi menjadi komponen-komponen yang dapat digunakan kembali dan ditest secara terpisah.
+
+**Contoh Modular Structure:**
+```
+project/
+├── auth/
+│   ├── login.js
+│   ├── register.js
+│   └── validation.js
+├── payment/
+│   ├── process.js
+│   ├── refund.js
+│   └── gateway.js
+└── utils/
+    ├── date.js
+    └── format.js
+```
+
+**Manfaat:**
+- Reusability tinggi
+- Easier testing
+- Parallel development
+- Clear separation of concerns
+
+### 4. **Scalable (Dapat Diskalakan)**
+**Kode dapat menangani pertumbuhan tanpa perlu ditulis ulang**
+
+Scalability bukan hanya tentang performa, tapi juga tentang bagaimana mudahnya menambah fitur baru.
+
+**Prinsip Scalable Code:**
+```python
+# Non-scalable
+def process_user_data(user1, user2, user3):
+    # Bagaimana kalau ada 100 users?
+    pass
+
+# Scalable
+def process_user_data(users_list):
+    for user in users_list:
+        process_single_user(user)
+```
+
+### 5. **Testable (Dapat Ditest)**
+**Kode mudah untuk ditulis unit test-nya**
+
+**Karakteristik Testable Code:**
+- Fungsi pure (tidak ada side effects)
+- Dependency injection
+- Single responsibility
+- Avoid global state
+
+**Contoh:**
+```javascript
+// Hard to test (tergantung external state)
+function calculateTotal() {
+    return window.cartItems.reduce((sum, item) => 
+        sum + item.price, 0) * window.taxRate;
+}
+
+// Easy to test (pure function)
+function calculateTotal(items, taxRate) {
+    return items.reduce((sum, item) => 
+        sum + item.price, 0) * taxRate;
+}
+```
+
+### 6. **Reusable (Dapat Digunakan Kembali)**
+**Kode dapat digunakan di berbagai tempat tanpa modifikasi**
+
+**Tips untuk Reusable Code:**
+```python
+# Non-reusable (too specific)
+def send_email_to_admin():
+    send_mail("admin@example.com", "Alert", "System error")
+
+# Reusable (generic)
+def send_email(recipient, subject, body):
+    # Implementation
+    pass
+
+# Bisa digunakan untuk berbagai keperluan
+send_email("admin@example.com", "Alert", "System error")
+send_email("user@example.com", "Welcome", "Thanks for joining")
+```
+
+### 7. **Performant (Performa Optimal)**
+**Kode berjalan efisien tanpa memboroskan resource**
+
+**Aspek Performance:**
+- Time complexity yang optimal
+- Memory usage yang efisien
+- Minimal database queries
+- Proper caching strategy
+
+**Contoh Optimization:**
+```javascript
+// Poor performance - O(n²)
+function findDuplicates(array) {
+    const duplicates = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                duplicates.push(array[i]);
+            }
+        }
+    }
+    return duplicates;
+}
+
+// Better performance - O(n)
+function findDuplicates(array) {
+    const seen = new Set();
+    const duplicates = new Set();
+    
+    for (const item of array) {
+        if (seen.has(item)) {
+            duplicates.add(item);
+        }
+        seen.add(item);
+    }
+    return Array.from(duplicates);
+}
+```
+
+### 8. **Secure (Aman)**
+**Kode terlindung dari vulnerabilities umum**
+
+**Security Best Practices:**
+- Input validation
+- SQL injection prevention
+- XSS protection
+- Proper authentication & authorization
+- Encryption untuk data sensitif
+
+```python
+# Vulnerable to SQL injection
+query = f"SELECT * FROM users WHERE id = {user_input}"
+
+# Secure (using parameterized queries)
+query = "SELECT * FROM users WHERE id = ?"
+cursor.execute(query, (user_input,))
+```
+
+### 9. **Portable (Dapat Dipindahkan)**
+**Kode dapat berjalan di berbagai environment**
+
+**Characteristics:**
+- Minimal external dependencies
+- Configuration through environment variables
+- Platform-agnostic code
+- Containerization ready
+
+```python
+# Non-portable (hardcoded paths)
+file_path = "C:\\Users\\Admin\\data.txt"
+
+# Portable
+import os
+file_path = os.path.join(os.getcwd(), "data.txt")
+```
+
+### 10. **Extensible (Dapat Dikembangkan)**
+**Mudah menambah fitur baru tanpa merusak yang sudah ada**
+
+**Design for Extensibility:**
+```python
+# Using Strategy Pattern for extensibility
+class PaymentProcessor:
+    def __init__(self, strategy):
+        self.strategy = strategy
+    
+    def process(self, amount):
+        return self.strategy.process(amount)
+
+# Easy to add new payment methods
+class CreditCardPayment:
+    def process(self, amount):
+        # Credit card logic
+        pass
+
+class PayPalPayment:
+    def process(self, amount):
+        # PayPal logic
+        pass
+
+# Menambah payment method baru tanpa mengubah existing code
+class CryptoPayment:
+    def process(self, amount):
+        # Cryptocurrency logic
+        pass
+```
+
+### 11. **Debuggable (Mudah Di-debug)**
+**Kode mudah untuk ditelusuri ketika ada masalah**
+
+**Tips untuk Debuggable Code:**
+- Meaningful error messages
+- Proper logging
+- Clear stack traces
+- Avoid deep nesting
+
+```python
+import logging
+
+def process_transaction(transaction):
+    logging.info(f"Processing transaction: {transaction.id}")
+    
+    try:
+        validate_transaction(transaction)
+        result = execute_transaction(transaction)
+        logging.info(f"Transaction {transaction.id} successful")
+        return result
+    except ValidationError as e:
+        logging.error(f"Validation failed for {transaction.id}: {e}")
+        raise
+    except Exception as e:
+        logging.error(f"Unexpected error in {transaction.id}: {e}")
+        raise
+```
+
+### 12. **Idempotent (Hasil Konsisten)**
+**Operasi yang dijalankan berkali-kali menghasilkan hasil yang sama**
+
+Penting untuk API dan sistem distributed.
+
+```python
+# Non-idempotent
+def add_to_counter():
+    global counter
+    counter += 1
+    return counter
+
+# Idempotent
+def set_user_status(user_id, status):
+    user = get_user(user_id)
+    user.status = status
+    user.save()
+    return user
+```
+
+### 13. **Loosely Coupled (Ketergantungan Rendah)**
+**Komponen-komponen tidak terlalu bergantung satu sama lain**
+
+```python
+# Tightly coupled
+class EmailSender:
+    def send(self, message):
+        smtp = SMTPServer()  # Direct dependency
+        smtp.send(message)
+
+# Loosely coupled
+class EmailSender:
+    def __init__(self, server):
+        self.server = server  # Dependency injection
+    
+    def send(self, message):
+        self.server.send(message)
+```
+
+### 14. **Consistent (Konsisten)**
+**Pola dan style yang seragam di seluruh codebase**
+
+**Area Konsistensi:**
+- Naming conventions
+- File structure
+- Error handling patterns
+- API design
+- Code formatting
+
+```javascript
+// Inconsistent
+function getUserName() { }
+function fetch_user_email() { }
+function GetUserAge() { }
+
+// Consistent
+function getUserName() { }
+function getUserEmail() { }
+function getUserAge() { }
+```
+
+### 15. **Self-Documenting (Mendokumentasi Diri Sendiri)**
+**Kode yang jelas tanpa perlu komentar berlebihan**
+
+```python
+# Needs comments (not self-documenting)
+def calc(x, y, z):
+    # Calculate monthly payment
+    # x is principal, y is rate, z is time
+    return x * y * (1 + y)**z / ((1 + y)**z - 1)
+
+# Self-documenting
+def calculate_monthly_payment(principal, annual_rate, years):
+    monthly_rate = annual_rate / 12
+    num_payments = years * 12
+    
+    if monthly_rate == 0:
+        return principal / num_payments
+    
+    return principal * monthly_rate * (1 + monthly_rate)**num_payments / \
+           ((1 + monthly_rate)**num_payments - 1)
+```
+
+---
+
 ## 🎨 Prinsip Clean Code
 
 ### 5. **Boy Scout Rule**
