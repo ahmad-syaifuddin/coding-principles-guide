@@ -91,6 +91,14 @@ Jangan tambahkan fungsionalitas sampai benar-benar diperlukan. Hindari over-engi
 
 **Contoh:** Jangan buat sistem authentication yang super canggih dengan 10 metode login berbeda jika aplikasi Anda hanya butuh login dengan email dan password.
 
+<div align="center">
+
+![Cover](https://pbs.twimg.com/media/FJjoEhjVUAYK0IR?format=jpg&name=small)
+
+![Cover Artikel Coding](https://substackcdn.com/image/fetch/$s_!tdue!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F380456f7-c4c1-4b3c-9a2b-b49d0b7508c4_1710x678.png)
+
+</div>
+
 ### 4. **SOLID Principles**
 
 Kumpulan 5 prinsip desain berorientasi objek yang membuat software lebih mudah dipahami, fleksibel, dan maintainable.
