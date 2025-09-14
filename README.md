@@ -222,6 +222,7 @@ project/
 
 **Contoh Laravel Blade Views Structure:**
 Berikut adalah contoh struktur modular Laravel Blade dengan layout modern menggunakan komponen:
+```
 resources/views/
 ├── components/
 │   ├── layouts/
@@ -274,8 +275,10 @@ resources/views/
     ├── home.blade.php
     ├── about.blade.php
     └── contact.blade.php
+```
 
 **React.js Component Structure (untuk FE/Frontend):**
+```
 src/
 ├── components/
 │   ├── common/
@@ -320,8 +323,10 @@ src/
     ├── helpers.js
     ├── constants.js
     └── validators.js
+```
 
 **Svelte Component Structure:**
+```
 src/
 ├── lib/
 │   ├── components/
@@ -366,6 +371,7 @@ src/
 │       └── settings/
 │           └── +page.svelte
 └── app.html
+```
 
 **Manfaat:**
 - Reusability tinggi - Komponen dapat digunakan di berbagai tempat
