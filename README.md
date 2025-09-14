@@ -12,9 +12,11 @@ Dokumen ini berisi kumpulan prinsip, konsep, dan istilah penting yang wajib dipa
 
 ![Cover Artikel Coding](https://rhurbans.com/content/images/2019/08/Coding_Principles.png)
 
+<div align="center">
 ![Cover Artikel Coding](https://miro.medium.com/v2/1*Y7cGwTIvDy2s9H5BfvU6jA.jpeg)
 
-![GIF Animasi](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21372331-1b3f-40dc-a491-778dcb16d079_800x800.gif)
+<img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21372331-1b3f-40dc-a491-778dcb16d079_800x800.gif" />
+</div>
 
 ### 1. **DRY (Don't Repeat Yourself)**
 **Jangan Ulangi Dirimu Sendiri**
