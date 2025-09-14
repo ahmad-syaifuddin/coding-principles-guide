@@ -224,12 +224,12 @@ project/
 >[!note]
 > Berikut adalah contoh struktur modular Laravel Blade dengan layout modern menggunakan komponen
 
-*Struktur ini menggunakan*:
-> Modern Blade Components dengan <x-component> syntax
-> Props dan Slots untuk fleksibilitas
-> Attribute Merging untuk customization
-> Anonymous Components untuk komponen sederhana
-> Class-based Components untuk komponen kompleks
+**Struktur ini menggunakan**:
+- Modern Blade Components dengan <x-component> syntax
+- Props dan Slots untuk fleksibilitas
+- Attribute Merging untuk customization
+- Anonymous Components untuk komponen sederhana
+- Class-based Components untuk komponen kompleks
 
 ```
 resources/views/
