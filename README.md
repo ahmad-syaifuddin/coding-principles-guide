@@ -220,11 +220,160 @@ project/
     └── format.js
 ```
 
+**Contoh Laravel Blade Views Structure:**
+Berikut adalah contoh struktur modular Laravel Blade dengan layout modern menggunakan komponen:
+resources/views/
+├── components/
+│   ├── layouts/
+│   │   ├── app.blade.php
+│   │   ├── guest.blade.php
+│   │   └── admin.blade.php
+│   ├── ui/
+│   │   ├── button.blade.php
+│   │   ├── card.blade.php
+│   │   ├── modal.blade.php
+│   │   ├── alert.blade.php
+│   │   ├── badge.blade.php
+│   │   └── dropdown.blade.php
+│   ├── forms/
+│   │   ├── input.blade.php
+│   │   ├── textarea.blade.php
+│   │   ├── select.blade.php
+│   │   ├── checkbox.blade.php
+│   │   ├── radio.blade.php
+│   │   └── file-upload.blade.php
+│   ├── navigation/
+│   │   ├── navbar.blade.php
+│   │   ├── sidebar.blade.php
+│   │   ├── breadcrumb.blade.php
+│   │   └── pagination.blade.php
+│   ├── dashboard/
+│   │   ├── stats-card.blade.php
+│   │   ├── chart-widget.blade.php
+│   │   ├── recent-activity.blade.php
+│   │   └── quick-actions.blade.php
+│   └── table/
+│       ├── data-table.blade.php
+│       ├── table-header.blade.php
+│       ├── table-row.blade.php
+│       └── table-actions.blade.php
+├── auth/
+│   ├── login.blade.php
+│   ├── register.blade.php
+│   ├── forgot-password.blade.php
+│   └── verify-email.blade.php
+├── dashboard/
+│   ├── index.blade.php
+│   ├── analytics.blade.php
+│   └── reports.blade.php
+├── profile/
+│   ├── edit.blade.php
+│   ├── show.blade.php
+│   └── settings.blade.php
+└── pages/
+    ├── home.blade.php
+    ├── about.blade.php
+    └── contact.blade.php
+
+**React.js Component Structure (untuk FE/Frontend):**
+src/
+├── components/
+│   ├── common/
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Header.module.css
+│   │   │   └── index.js
+│   │   ├── Button/
+│   │   │   ├── Button.jsx
+│   │   │   ├── Button.test.js
+│   │   │   └── index.js
+│   │   └── Modal/
+│   │       ├── Modal.jsx
+│   │       └── Modal.module.css
+│   ├── forms/
+│   │   ├── LoginForm/
+│   │   │   ├── LoginForm.jsx
+│   │   │   └── validation.js
+│   │   └── ContactForm/
+│   │       ├── ContactForm.jsx
+│   │       └── schema.js
+│   └── pages/
+│       ├── Dashboard/
+│       │   ├── Dashboard.jsx
+│       │   ├── components/
+│       │   │   ├── StatsCard.jsx
+│       │   │   └── ChartWidget.jsx
+│       │   └── hooks/
+│       │       └── useDashboard.js
+│       └── Profile/
+│           ├── Profile.jsx
+│           └── ProfileSettings.jsx
+├── hooks/
+│   ├── useAuth.js
+│   ├── useApi.js
+│   └── useLocalStorage.js
+├── services/
+│   ├── api.js
+│   ├── auth.js
+│   └── storage.js
+└── utils/
+    ├── helpers.js
+    ├── constants.js
+    └── validators.js
+
+**Svelte Component Structure:**
+src/
+├── lib/
+│   ├── components/
+│   │   ├── ui/
+│   │   │   ├── Button.svelte
+│   │   │   ├── Card.svelte
+│   │   │   ├── Modal.svelte
+│   │   │   └── Toast.svelte
+│   │   ├── forms/
+│   │   │   ├── Input.svelte
+│   │   │   ├── Select.svelte
+│   │   │   └── FileUpload.svelte
+│   │   └── navigation/
+│   │       ├── Navbar.svelte
+│   │       ├── Sidebar.svelte
+│   │       └── Breadcrumb.svelte
+│   ├── stores/
+│   │   ├── auth.js
+│   │   ├── notifications.js
+│   │   └── theme.js
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── auth.service.js
+│   │   └── storage.service.js
+│   └── utils/
+│       ├── helpers.js
+│       ├── validators.js
+│       └── formatters.js
+├── routes/
+│   ├── +layout.svelte
+│   ├── +page.svelte
+│   ├── auth/
+│   │   ├── login/
+│   │   │   └── +page.svelte
+│   │   └── register/
+│   │       └── +page.svelte
+│   ├── dashboard/
+│   │   ├── +page.svelte
+│   │   └── +layout.svelte
+│   └── profile/
+│       ├── +page.svelte
+│       └── settings/
+│           └── +page.svelte
+└── app.html
+
 **Manfaat:**
-- Reusability tinggi
-- Easier testing
-- Parallel development
-- Clear separation of concerns
+- Reusability tinggi - Komponen dapat digunakan di berbagai tempat
+- Easier testing - Setiap modul dapat ditest secara independen
+- Parallel development - Tim dapat bekerja pada modul berbeda secara bersamaan
+- Clear separation of concerns - Setiap modul memiliki tanggung jawab yang jelas
+- Maintainability - Mudah untuk debugging dan update
+- Scalability - Mudah menambah fitur baru tanpa mengganggu yang lama
 
 ### 4. **Scalable (Dapat Diskalakan)**
 **Kode dapat menangani pertumbuhan tanpa perlu ditulis ulang**
