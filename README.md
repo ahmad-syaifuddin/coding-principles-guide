@@ -8,6 +8,14 @@ Dokumen ini berisi kumpulan prinsip, konsep, dan istilah penting yang wajib dipa
 
 ## 🏗️ Prinsip Desain Fundamental
 
+![Cover Artikel Coding](https://media.licdn.com/dms/image/v2/D4D12AQEY9hyNClyvjw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698261697703?e=2147483647&v=beta&t=YWJhw2B7BZCGZy9AqVWNvJ93A0IdlmLQ5Py2KfKDYa8)
+
+![Cover Artikel Coding](https://rhurbans.com/content/images/2019/08/Coding_Principles.png)
+
+![Cover Artikel Coding](https://miro.medium.com/v2/1*Y7cGwTIvDy2s9H5BfvU6jA.jpeg)
+
+![GIF Animasi](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21372331-1b3f-40dc-a491-778dcb16d079_800x800.gif)
+
 ### 1. **DRY (Don't Repeat Yourself)**
 **Jangan Ulangi Dirimu Sendiri**
 
