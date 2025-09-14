@@ -148,6 +148,8 @@ Modul high-level tidak boleh bergantung pada modul low-level. Keduanya harus ber
 
 ## ⭐ Karakteristik Kode Berkualitas (Code Quality Attributes)
 
+![cover](https://www.simform.com/wp-content/uploads/2019/12/characteristics-of-good-quality-code-1536x1016.webp)
+
 ### 1. **Readable (Dapat Dibaca)**
 **Kode harus mudah dibaca seperti membaca cerita**
 
